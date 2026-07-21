@@ -1,18 +1,13 @@
-import streamlit as st
+import os
 import pandas as pd
+import streamlit as st
 import joblib
 
-# <<<<<<<<<<<<<<< Page Configuration >>>>>>>>>>>>>>>
-st.set_page_config(
-    page_title="Laptop Price Prediction",
-    layout="centered"
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-# <<<<<<<<<<<<<<<<<< Load Model Files >>>>>>>>>>>>>>>>
-model = joblib.load("LR_laptop_price.pkl")
-scaler = joblib.load("scaler.pkl")
-encoded_columns = joblib.load("columns.pkl")
+model = joblib.load(os.path.join(BASE_DIR, "LR_laptop_price.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+encoded_columns = joblib.load(os.path.join(BASE_DIR, "columns.pkl"))
 
 
 # <<<<<<<<<<<<<< Title >>>>>>>>>>>>>
