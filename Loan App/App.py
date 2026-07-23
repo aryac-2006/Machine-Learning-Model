@@ -1,13 +1,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-import os
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-model = joblib.load(os.path.join(BASE_DIR, "loan_approval_model.pkl"))
-scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
-columns = joblib.load(os.path.join(BASE_DIR, "columns.pkl"))
 
 # Page Configuration
 st.set_page_config(
